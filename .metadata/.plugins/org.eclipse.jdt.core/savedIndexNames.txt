@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+/home/ravindu/git/AnimesApp/.metadata/.plugins/org.eclipse.jdt.core
+243842369.index
+1270315800.index
+3797314431.index
+2819292409.index
