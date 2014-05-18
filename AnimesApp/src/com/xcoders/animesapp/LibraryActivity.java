@@ -1,14 +1,22 @@
 package com.xcoders.animesapp;
 
+import com.xcoders.adaptors.LibraryGridAdaptor;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
+import android.widget.Toast;
 import android.os.Build;
 
 public class LibraryActivity extends ActionBarActivity {
@@ -16,12 +24,20 @@ public class LibraryActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_library);
+		setContentView(R.layout.activity_library);	
+		
+		
+		GridView gridview = (GridView) findViewById(R.id.gridview);
+	    gridview.setAdapter(new LibraryGridAdaptor(this));
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+	    gridview.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+	            Intent intent = new Intent(getApplicationContext(), AniMessageActivity.class);
+	            intent.putExtra("templateId",""+ position);
+	            startActivity(intent);
+	        }
+	    });
+		
 	}
 
 	@Override

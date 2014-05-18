@@ -26,6 +26,10 @@
             android:name="com.xcoders.animesapp.LibraryActivity"
             android:label="@string/title_activity_library" >
         </activity>
+        <activity
+            android:name="com.xcoders.animesapp.AniMessageActivity"
+            android:label="@string/title_activity_ani_message" >
+        </activity>
     </application>
 
 </manifest>

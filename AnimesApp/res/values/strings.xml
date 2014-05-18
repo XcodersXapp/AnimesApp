@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_library">LibraryActivity</string>
+    <string name="test">Hello world!</string>
+    <string name="title_activity_ani_message">AniMessageActivity</string>
 
 </resources>
